@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SpaceHolidays</title>
+		<link rel="stylesheet" href="/static/styles/styleforpages.css">
+	</head>
+
+	<body>
+		<div class="frame">
+
+		    {% if page['page_title'] %}
+		    <div class="h">Графы</div>
+		    {% endif %}
+
+			<div class="main-text">
+				{{page['page_text'] | safe}}
+			</div>
+		  
+			{% if page['picture'] %}
+			<div class="illust"><img src="page['picture']"></div>
+			{% endif %}
+
+			<form action="" method="post">
+				<p> <label>Ответ:</label>
+					<input type="text" name="answer"> <br>
+					<input type="submit"> </p>
+			</form>
+
+			{% block result %}{% endblock %}
+			  
+			<ul class="keypad">
+				{% for button in page['buttons'] %}
+				<li><a href="/pages/{{button.button_page}}">{{button['button_text']}}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	
+		<div class="navig">
+			<ul class="menu">
+				<li><a href="/"><img src="/static/pictures/home.png"></a></li>
+				<li><a href="table.html"><img src="/static/pictures/table.png"></a></li>
+			</ul>
+		
+			<table class="position">
+			<tr>
+				<td class="thing">Положение:</td>
+				<td class="meaning">{{page['place']}}</td>
+			</tr>
+			<tr>
+				<td class="thing">Кол-во выполненных заданий:</td>
+				<td class="meaning">{{page['tasks']}}</td>
+			</tr>
+			</table>
+		</div>
+	</body>
+</html>

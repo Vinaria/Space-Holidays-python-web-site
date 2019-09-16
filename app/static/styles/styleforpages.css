@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  height:100vh;
+  font-family: arial, sans-serif;
+}
+
+h1 {
+  font-size: 86px;
+}
+
+
+.navig{
+	right: 0px;
+	min-height: 100vh;
+	min-width: 250px;
+	padding: 20px;
+	padding-right: 0px;
+	background-color: rgb(104, 210,125);
+	position: absolute;
+	border-left: 4px solid rgb(104, 190,148);
+	position: fixed;
+}
+	.menu {
+	  list-style: none;
+	  padding-top: 30px;
+	  margin: 0 auto;
+	  float: left;
+	  padding-inline-start: 20px;
+	}
+		.menu li {
+		  margin-right: 50px;
+		  float: left;
+		  position: relative;
+		}
+
+		.menu img {
+		  width: 35px;
+		}
+
+	.position{
+	  top: 150px;
+	  font-size: 18;
+	  color: white;
+	  position: absolute;
+	  margin-right: 20px;
+	}
+		.thing{
+		  text-align: left;
+		  width: 200;
+		  padding: 5px;
+		  padding-left: 0px;
+		  font-weight: bold;
+		}
+
+		.meaning{
+		  text-align: right;
+		  min-width: 50px;
+		}
+
+.frame{
+  width: 55%;
+  margin: 0 auto;
+  height: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 40px;
+  position: absolute;
+
+}
+	.main-text{
+	  font-size: 22;
+	  color: rgb(36,24,45);
+	  text-align: justify;
+	  position: relative;
+	}
+	  .h{
+		  font-size: 26;
+		  color: white;
+		  font-weight: bold;
+		  background-color: rgb(104, 210,125);
+		  padding-top: 25px;
+		  padding-left: 20px;
+		  padding-bottom: 10px;
+		  margin-right: 25px;
+		  border-bottom: 4px solid rgb(116, 180,148);
+		  border-left: 4px solid rgb(104, 190,148);
+	  }
+
+	  .defin{
+		color: rgb(104, 210,125);
+		font-size: 22;
+	  }
+
+	#answer {
+        background-color: rgb(104, 210,125);
+        padding: 12px 44px;
+        border-bottom: 4px solid rgb(116, 180,148);
+		border-left: 4px solid rgb(104, 190,148);
+        color: white;
+        font-size: 20px;
+        float: left;
+        display: none;
+      }
+      #answer:target {display: block;}
+
+	.illust {
+	  padding: 20px;
+	  padding-right: 150px;
+	}
+	  .illust img{
+	    width: 100%;
+	  }
+
+	.keypad{
+	  list-style: none;
+	  float: left;
+	  padding-inline-start: 0px;
+	  margin-top: 50;
+	}
+
+	    .keypad li {
+		  margin-right: 12px;
+		  float: left;
+		  margin-bottom: 40px;
+		}
+
+		.keypad li a {
+		  padding: 12px 44px;
+		  background-color: rgb(104, 210,125);
+		  font-size: 20px;
+		  color: white;
+		  text-decoration: none;
+		  border-bottom: 4px solid rgb(116, 180,148);
+		  border-left: 4px solid rgb(104, 190,148);
+		}
+
+
+
+

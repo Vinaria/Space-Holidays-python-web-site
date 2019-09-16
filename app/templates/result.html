@@ -1,0 +1,9 @@
+{% extends "page.html" %}
+
+{% block result %}
+    {% if result %}
+        <div class="button">Ура!Правильный ответ!</div>
+    {% else %}
+        <div class="button">Неправильный ответ! Попробуй еще раз</div>
+    {% endif %}
+{% endblock %}

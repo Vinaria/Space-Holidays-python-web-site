@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: arial, sans-serif;
+}
+
+h1 {
+  font-size: 86px;
+}
+
+.frame {
+  top: 10;
+  padding: 70;
+  text-align: center;
+  background-color: rgb(104, 210,125);
+  color: white;
+}
+
+
+	.menu {
+	  list-style: none;
+	  margin-top: 10px;
+	  top: 10;
+	  left: 5;
+	  position: absolute;
+	  padding-inline-start: 20px;
+	}
+		.menu li {
+		  float: left;
+		  margin-right: 30px;
+		}
+			.menu li a {
+			  text-decoration: none;
+			  color: white;
+			  font-size: 18px;
+			}
+	
+	
+	.regist{
+	  margin-top: 10px;
+	  top: 10;
+	  right: 20;
+	  position: absolute;
+	}
+		.regist a {
+		  text-decoration: none;
+		  color: white;
+		  font-size: 20px;
+		}
+
+
+	.enter{
+	  margin-top: 10px;
+	  top: 10;
+	  right: 180;
+	  position: absolute;
+	}
+		.enter a {
+		  text-decoration: none;
+		  color: white;
+		  font-size: 22px;
+		}
+
+
+	.container {
+	  width: 960px;
+	  margin: 0 auto;
+	}
+
+
+	.play a {
+	  padding: 12px 44px;
+	  background: url("/static/pictures/but.png");
+	  font-size: 26px;
+	  color: white;
+	  text-decoration: none;
+	  border-bottom: 4px solid rgb(003, 010, 092);
+	  border-left: 4px solid rgb(018, 028, 132);
+	}
+	
+	
+.footer {
+  padding: 20px;
+  left: 5;
+  bottom: 0;
+  position: absolute;
+  font-size: 14;
+}
