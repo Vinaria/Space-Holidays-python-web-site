@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 0px;
   height:100vh;
   font-family: arial, sans-serif;
 }
@@ -46,7 +46,7 @@ h1 {
 	}
 		.thing{
 		  text-align: left;
-		  width: 200;
+		  width: 200px;
 		  padding: 5px;
 		  padding-left: 0px;
 		  font-weight: bold;
@@ -69,7 +69,7 @@ h1 {
 }
 	.main-text{
 	  font-size: 22;
-	  color: rgb(36,24,45);
+	  color: rgb(36, 24, 45);
 	  text-align: justify;
 	  position: relative;
 	}
@@ -91,17 +91,36 @@ h1 {
 		font-size: 22;
 	  }
 
-	#answer {
-        background-color: rgb(104, 210,125);
+	  .box {
+        background-color: rgb(104, 210, 125);
         padding: 12px 44px;
         border-bottom: 4px solid rgb(116, 180,148);
 		border-left: 4px solid rgb(104, 190,148);
         color: white;
         font-size: 20px;
         float: left;
-        display: none;
       }
-      #answer:target {display: block;}
+
+      .wrong_answer {
+        background-color: rgb(225, 80, 80);
+        padding: 12px 44px;
+        border-bottom: 4px solid rgb(220, 50, 103);
+		border-left: 4px solid rgb(225, 60, 103);
+        color: white;
+        font-size: 20px;
+        float: left;
+      }
+
+      .right_answer {
+        background-color: rgb(90, 120, 200);
+        padding: 12px 44px;
+        border-bottom: 4px solid rgb(113, 90, 195);
+		border-left: 4px solid rgb(113, 100, 200);
+        color: white;
+        font-size: 20px;
+        float: left;
+        text-decoration: none;
+      }
 
 	.illust {
 	  padding: 20px;
@@ -115,23 +134,23 @@ h1 {
 	  list-style: none;
 	  float: left;
 	  padding-inline-start: 0px;
-	  margin-top: 50;
+	  margin-top: 50px;
 	}
 
 	    .keypad li {
-		  margin-right: 12px;
+		  margin-left: 12px;
 		  float: left;
 		  margin-bottom: 40px;
 		}
 
 		.keypad li a {
 		  padding: 12px 44px;
-		  background-color: rgb(104, 210,125);
+		  background-color: rgb(104, 210, 125);
 		  font-size: 20px;
 		  color: white;
 		  text-decoration: none;
-		  border-bottom: 4px solid rgb(116, 180,148);
-		  border-left: 4px solid rgb(104, 190,148);
+		  border-bottom: 4px solid rgb(116, 180, 148);
+		  border-left: 4px solid rgb(104, 190, 148);
 		}
 
 

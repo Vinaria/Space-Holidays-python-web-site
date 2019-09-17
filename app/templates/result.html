@@ -1,9 +1,9 @@
 {% extends "page.html" %}
 
 {% block result %}
-    {% if result %}
-        <div class="button">Ура!Правильный ответ!</div>
+    {% if check_result %}
+    <div class="right_answer"><a href="{{page['after-answer-button_page']}}">Ура, правильный ответ! Можешь отправляться дальше</a></div>
     {% else %}
-        <div class="button">Неправильный ответ! Попробуй еще раз</div>
+    <div class="wrong_answer">Неправильный ответ! Попробуй еще раз</div>
     {% endif %}
 {% endblock %}

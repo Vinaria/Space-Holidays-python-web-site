@@ -17,14 +17,15 @@
 			</div>
 		  
 			{% if page['picture'] %}
-			<div class="illust"><img src="page['picture']"></div>
+			<div class="illust"><img src="{{page['picture']}}"></div>
 			{% endif %}
 
-			<form action="" method="post">
-				<p> <label>Ответ:</label>
-					<input type="text" name="answer"> <br>
-					<input type="submit"> </p>
+			{% if page['after-answer-button_page'] %}
+			<form action="http://127.0.0.1:5000/pages/task1/giving_answer" method="post">
+				<div class="box"> <label for="answer-field">Ответ:  <input type="text" name="answer" id="answer-field"></label> </div>
+				<div style="margin-left: 20px; margin: 10px; padding: 5px; float: left"><input type="submit" value="Проверить"></p></div>
 			</form>
+			{% endif %}
 
 			{% block result %}{% endblock %}
 			  
@@ -48,7 +49,7 @@
 			</tr>
 			<tr>
 				<td class="thing">Кол-во выполненных заданий:</td>
-				<td class="meaning">{{page['tasks']}}</td>
+				<td class="meaning">{{tasks_amount}}</td>
 			</tr>
 			</table>
 		</div>

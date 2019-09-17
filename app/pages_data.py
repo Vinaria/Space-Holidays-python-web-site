@@ -7,16 +7,12 @@ pages = {
 		'picture' : '/static/pictures/grafs1.png',
 		'buttons' : [
 		    {
-			    'button_text' : 'Узнать правильный ответ',
-				'button_page' : '#answer'
-			},
-			{
 			    'button_text' : 'Теория',
 				'button_page' : 'theory1'
-		    }
+			}
 		],
-		'place' : 'Кают-компания',
-		'tasks' : '0'
+		'after-answer-button_page' : '2',
+		'place' : 'Кают-компания'
     },
 	'theory1' : {
 		'page_no' : 'theory1',
@@ -44,8 +40,7 @@ pages = {
 			    'button_page': '1'
 			}
 		],
-		'place' : '-',
-		'tasks' : '0'
+		'place' : '-'
 	},
 	'1': {
 		'page_no': '1',
@@ -63,7 +58,6 @@ pages = {
                 'button_page': 'task1'
             }
         ],
-        'place' : 'Кают-компания',
-        'tasks' : '0'
+        'place' : 'Кают-компания'
     }
 }
