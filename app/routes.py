@@ -5,6 +5,7 @@ from app.answers_data import *
 
 tasks_amount = int(0)
 
+
 @app.route('/')
 @app.route('/index')
 def root():
@@ -35,6 +36,10 @@ def answer_check(page_no):
     else:
         return render_template('result.html', check_result=False, tasks_amount = tasks_amount, page=pages[page_no])
 
+
+@app.route('/sign/<to_do>')
+def sign_up(to_do):
+    return render_template('account.html', to_do=to_do)
 
 
 
