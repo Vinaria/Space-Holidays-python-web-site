@@ -2,7 +2,7 @@
 
 {% block result %}
     {% if check_result %}
-    <div class="right_answer"><a href="http://127.0.0.1:5000/pages/{{page['after-answer-button_page']}}">Ура, правильный ответ! Можешь отправляться дальше</a></div>
+    <div class="right_answer"><a href="/pages/{{page['after-answer-button_page']}}">Ура, правильный ответ! Можешь отправляться дальше</a></div>
     {% else %}
     <div class="wrong_answer">Неправильный ответ! Попробуй еще раз</div>
     {% endif %}

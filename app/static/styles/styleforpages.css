@@ -93,7 +93,6 @@ h1 {
 
       .answer_box{
         height: 60px;
-        margin-bottom: 50px;
       }
           .input_box {
             background-color: rgb(104, 210, 125);
@@ -121,23 +120,21 @@ h1 {
         color: white;
         font-size: 20px;
         float: left;
+        margin-top: 40px;
         width: 80%;
         text-align: center;
-        margin-bottom: 60px;
       }
 
       .right_answer a {
         background-color: rgb(90, 120, 200);
         padding: 12px 44px;
-        width: 80%;
-        text-align: center;
         border-bottom: 4px solid rgb(113, 90, 195);
 		border-left: 4px solid rgb(113, 100, 200);
         color: white;
         font-size: 20px;
         float: left;
         text-decoration: none;
-        margin-bottom: 60px;
+        margin-top: 40px;
       }
 
 	.illust {
@@ -152,7 +149,7 @@ h1 {
 	  list-style: none;
 	  float: left;
 	  padding-inline-start: 0px;
-
+	  margin-top: 50px;
 	}
 
 	    .keypad li {

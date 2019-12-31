@@ -20,7 +20,7 @@
 			<div class="illust"><img src="{{page['picture']}}"></div>
 			{% endif %}
 
-			{% if page['after-answer-button_page'] %}
+			{% if page['after-answer-button_page'] and not answered %}
 			<form action="http://127.0.0.1:5000/pages/task1/giving_answer" method="post" class="answer_box">
 				<div class="input_box"> <label for="answer-field">Ответ:  <input type="text" name="answer" id="answer-field"></label> </div>
 				<div class="submit_box"><input type="submit" value="Проверить"></div>
