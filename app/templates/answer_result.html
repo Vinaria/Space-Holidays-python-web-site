@@ -1,0 +1,9 @@
+{% extends "page.html" %}
+
+{% block result %}
+    {% if check_result %}
+    <div class="right_answer"><a href="/pages/{{page['after-answer-button_page']}}">Ура, правильный ответ! Можешь отправляться дальше</a></div>
+    {% else %}
+    <div class="wrong_answer">Неправильный ответ! Попробуй еще раз</div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "sign_in.html" %}
+
+{% block result %}
+    {% if result %}
+    <div class="right_answer"><p>Поздравляем с возвращением, {{login}}! Вы успешно вошли в систему :P</p>
+    <a href="/">Вернуться на главную страницу</a>
+    </div>
+    {% else %}
+    <div class="wrong_answer">Кажется, что-то пошло не так... :(</div>
+    {% endif %}
+{% endblock %}

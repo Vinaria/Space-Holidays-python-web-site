@@ -8,12 +8,19 @@
   <body> 
   
     <div class="frame">
+
+        {% if registered %}
+        <div class="enter">Пользователь: {{login}} </div>
+
+        {% else %}
 	  <div class="enter">
-		<a href="/signin">Вход</a>
+		<a href="/signin_page">Вход</a>
 	  </div>
 	  <div class="regist">
-		<a href="/signup">Регистрация</a>
+		<a href="/signup_page">Регистрация</a>
 	  </div>
+        {% endif %}
+
 	  <ul class="menu">
         <li><a href="/contacts">Контакты</a></li>
       </ul>

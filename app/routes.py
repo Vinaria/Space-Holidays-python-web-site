@@ -6,7 +6,8 @@ import json
 import os
 
 tasks_amount = 0
-
+login = ''
+registered = False
 
 def digit(s):
     s1 = ''
@@ -20,8 +21,10 @@ def exists(log, pas):
     with open('app/person_data.json', 'r', encoding='utf-8') as fh:
         data = json.load(fh)
 
-    if (log in data) and (pas in data[log['password']]):
-        return True
+    if log in data:
+        if pas == data[log]:
+            return True
+        return False
     else:
         return False
 
@@ -29,7 +32,7 @@ def exists(log, pas):
 @app.route('/')
 @app.route('/index')
 def root():
-    return render_template('index.html')
+    return render_template('index.html', registered = registered, login = login)
 
 
 @app.route('/pages/<page_no>/')
@@ -53,25 +56,34 @@ def answer_check(page_no):
 
     if answer == answers[page_no]:
         tasks_amount += 1
-        return render_template('result.html', check_result=True, tasks_amount=tasks_amount, page=pages[page_no], answered=True)
+        return render_template('answer_result.html', check_result=True, tasks_amount=tasks_amount, page=pages[page_no], answered=True)
     else:
-        return render_template('result.html', check_result=False, tasks_amount=tasks_amount, page=pages[page_no])
+        return render_template('answer_result.html', check_result=False, tasks_amount=tasks_amount, page=pages[page_no])
 
 
-@app.route('/signup', methods=['POST', 'GET'])
+@app.route('/signup_page/')
+def reg_page():
+    return render_template('sign_up.html')
+
+
+@app.route('/signin_page/')
+def enter_page():
+    return render_template('sign_in.html')
+
+
+@app.route('/signup_page/signup', methods=['POST', 'GET'])
 def registration():
     login = request.form.get('log')
     pas1 = request.form.get('pas1')
     pas2 = request.form.get('pas2')
 
-    with open('app.person_data.json', 'r', encoding='utf-8') as fh:
+    with open('app/person_data.json', 'r', encoding='utf-8') as fh:
         data = json.load(fh)
 
-    if pas1 == pas2 and login not in data:
-        data.add(login['password'])
-        data[login['password']] = pas1
+    if pas1 == pas2 and not(login in data):
+        data[login] = pas1
 
-        with open('person_data.json', 'w', encoding='utf-8') as fh:
+        with open('app/person_data.json', 'w', encoding='utf-8') as fh:
             fh.write(json.dumps(data, ensure_ascii=False))
 
         return render_template('regist_result.html', result=True)
@@ -79,13 +91,17 @@ def registration():
         return render_template('regist_result.html', result=False)
 
 
-@app.route('/signin', methods=['POST', 'GET'])
+@app.route('/signin_page/signin', methods=['POST', 'GET'])
 def sign_in():
-    login = request.form.get('log')
+    log = request.form.get('log')
     pas = request.form.get('pas')
 
-    if exists(login, pas):
+    global login, registered
 
-        return render_template('index.html', registered=True)
+    if exists(log, pas):
+        login = log
+        result = registered = True
     else:
-        return render_template('cant_sign_in.html')
+        result = False
+
+    return render_template('enter_result.html', result = result)

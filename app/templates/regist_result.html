@@ -1,0 +1,10 @@
+{% extends "sign_up.html" %}
+
+{% block result %}
+    {% if result %}
+        <div class="right_answer">Поздравляем с успешной регистрацией! Теперь вы можете вернуться на <a href="/">главную страницу</a> и войти в
+        свой новый аккаунт</div>
+    {% else %}
+        <div class="wrong_answer">Кажется, что-то пошло не так... :(</div>
+    {% endif %}
+{% endblock %}
