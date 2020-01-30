@@ -60,7 +60,15 @@ h1 {
 		  font-size: 22px;
 		}
 
-
+    .user_name{
+      margin-top: 10px;
+	  top: 10;
+	  right: 180;
+	  position: absolute;
+	  color: white;
+	  font-size: 24px;
+	  font-weight: bold;
+    }
 	.container {
 	  width: 960px;
 	  margin: 0 auto;

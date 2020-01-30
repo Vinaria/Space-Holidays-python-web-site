@@ -10,7 +10,7 @@
     <div class="frame">
 
         {% if registered %}
-        <div class="enter">Пользователь: {{login}} </div>
+      <div class="user_name"> {{login}} </div>
 
         {% else %}
 	  <div class="enter">
@@ -21,14 +21,20 @@
 	  </div>
         {% endif %}
 
-	  <ul class="menu">
-        <li><a href="/contacts">Контакты</a></li>
-      </ul>
+          <!-- <ul class="menu">
+            <li><a href="/contacts">Контакты</a></li>
+          </ul>--!>
+
       <div class="container">
-        <h1>Каникулы в космосе</h1>
+          <h1>Каникулы в космосе</h1>
       </div>
-	  <div class="play">
+
+      <div class="play">
           <a href="pages/0">Начать игру</a>
+      </div>
+
+      <div class="continue">
+          <a href="pages/{{page}}">Продолжить игру</a>
       </div>
     </div>
 

@@ -2,37 +2,20 @@ from flask import render_template, request, send_from_directory
 from app import app
 from app.pages_data import *
 from app.answers_data import *
+from app.long_useless_functions import *
 import json
 import os
 
 tasks_amount = 0
 login = ''
 registered = False
-
-def digit(s):
-    s1 = ''
-    for i in range(len(s)):
-        if s[i].isdigit() or s[i] == '.':
-            s1 += s[i]
-    return s1
-
-
-def exists(log, pas):
-    with open('app/person_data.json', 'r', encoding='utf-8') as fh:
-        data = json.load(fh)
-
-    if log in data:
-        if pas == data[log]:
-            return True
-        return False
-    else:
-        return False
+page = '/'
 
 
 @app.route('/')
 @app.route('/index')
 def root():
-    return render_template('index.html', registered = registered, login = login)
+    return render_template('index.html', registered = registered, login = login, page=page)
 
 
 @app.route('/pages/<page_no>/')
@@ -40,6 +23,7 @@ def handle_pages(page_no):
     global tasks_amount
     if page_no not in pages.keys():
         return 'Error 404', 404
+    change_page(login, page_no)
     return render_template('page.html', page=pages[page_no], tasks_amount=tasks_amount)
 
 
@@ -56,6 +40,9 @@ def answer_check(page_no):
 
     if answer == answers[page_no]:
         tasks_amount += 1
+        if registered:
+            change_tasks(login)
+
         return render_template('answer_result.html', check_result=True, tasks_amount=tasks_amount, page=pages[page_no], answered=True)
     else:
         return render_template('answer_result.html', check_result=False, tasks_amount=tasks_amount, page=pages[page_no])
@@ -81,7 +68,7 @@ def registration():
         data = json.load(fh)
 
     if pas1 == pas2 and not(login in data):
-        data[login] = pas1
+        data[login] = {'password': pas1, 'status' : 'user', 'tasks_done' : 0, 'page' : '/'}
 
         with open('app/person_data.json', 'w', encoding='utf-8') as fh:
             fh.write(json.dumps(data, ensure_ascii=False))
@@ -96,10 +83,12 @@ def sign_in():
     log = request.form.get('log')
     pas = request.form.get('pas')
 
-    global login, registered
+    global login, registered, tasks_amount, page
 
     if exists(log, pas):
         login = log
+        tasks_amount = get_tasks(login)
+        page = get_page(login)
         result = registered = True
     else:
         result = False
