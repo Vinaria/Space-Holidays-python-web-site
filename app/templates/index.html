@@ -33,9 +33,11 @@
           <a href="pages/0">Начать игру</a>
       </div>
 
+      {% if registered %}
       <div class="continue">
-          <a href="pages/{{page}}">Продолжить игру</a>
+          <a href="pages/{{page}}">Продолжить</a>
       </div>
+      {% endif %}
     </div>
 
     <div class="footer">

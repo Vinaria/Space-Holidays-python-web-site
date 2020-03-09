@@ -22,8 +22,11 @@ def root():
 def handle_pages(page_no):
     global tasks_amount
     if page_no not in pages.keys():
-        return 'Error 404', 404
-    change_page(login, page_no)
+        return "Couldn't find page(..", 404
+
+    if login:
+        change_page(login, page_no)
+
     return render_template('page.html', page=pages[page_no], tasks_amount=tasks_amount)
 
 
