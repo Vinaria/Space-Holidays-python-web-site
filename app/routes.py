@@ -44,7 +44,8 @@ def answer_check(page_no):
     if answer == answers[page_no]:
         tasks_amount += 1
         if registered:
-            change_tasks(login)
+            change_tasks(login, page_no)
+            tasks_amount = get_tasks(login)
 
         return render_template('answer_result.html', check_result=True, tasks_amount=tasks_amount, page=pages[page_no], answered=True)
     else:
@@ -71,7 +72,7 @@ def registration():
         data = json.load(fh)
 
     if pas1 == pas2 and not(login in data):
-        data[login] = {'password': pas1, 'status' : 'user', 'tasks_done' : 0, 'page' : '/'}
+        data[login] = {'password': pas1, 'status': 'user', 'tasks_done': [], 'page': '/'}
 
         with open('app/person_data.json', 'w', encoding='utf-8') as fh:
             fh.write(json.dumps(data, ensure_ascii=False))
